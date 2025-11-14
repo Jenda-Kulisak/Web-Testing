@@ -1,6 +1,5 @@
 const grid = document.getElementById("grid");
 const kb = document.getElementById("keyboard");
-const dialog = document.getElementById("popup");
 const cg = document.getElementById("custom_game");
 const dg = document.getElementById("daily_game");
 const gt = document.getElementById("game_text");
@@ -52,7 +51,8 @@ console.log(todaydate + " - " + new Date().toLocaleDateString());
 
 if (todaydate == new Date().toLocaleDateString()) {
     dc.style.display = "block";
-    dg.style.opacity = 0.7;
+    document.getElementById("daily").style.opacity = 0.7;
+    document.getElementById("daily").style.pointerEvents = "none";
     dg.style.pointerEvents = 'none';
     if (cookiesindividual[0] == "false") {
         dc.innerText = "Daily Challenge Failed";
@@ -153,7 +153,7 @@ function Game() {
                 return;
             }
 
-            const forbidden = /^[a-zA-ZěščřžýáíéůúóťďňĺľĚŠČŘŽÝÁÍÉŮÚÓŤĎŇĹĽ'";°¨§,.]$/;
+            const forbidden = /^[a-zA-ZěščřžýáíéůúóťďňĺľĚŠČŘŽÝÁÍÉŮÚÓŤĎŇĹĽ'";°¨§,.% ]$/;
             if (forbidden.test(e.key)) {
                 return;
             }
@@ -422,9 +422,12 @@ function Game() {
             endscreen()
     }
     function endscreen() {
+        cells.forEach(cell => {
+            cell.blur();
+        });
         document.body.style.cursor = "pointer";
         gt.style.display = "none";
-        mt.style.display = "none";
+        mt.style.marginTop = "0px";
         agrid.style.display = "none";
         console.log(istats);
         istats.completed++;
@@ -447,9 +450,6 @@ function Game() {
         if (win) {
             console.log("WON")
             istats.wins++;
-            dialog.innerHTML = '<p class="dtext">Player Won <br> Click To Return</p>';
-            if (attempt == 1)
-                dialog.style.marginTop = "150px";
             agrid.style.display = "none";
         }
         else {
@@ -457,9 +457,7 @@ function Game() {
             istats.losses++;
             agrid.style.display = "grid";
             kb.style.display = "none"
-            dialog.innerHTML = '<p class="dtext">Player Lost <br> Click To Return</p>';
         }
-        dialog.showModal()
         localStorage.setItem("istats", JSON.stringify(istats));
 
         let click = false;

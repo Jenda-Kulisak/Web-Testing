@@ -49,13 +49,6 @@
     box-sizing: border-box;
   }
 
-
-  #setGear {
-    position: absolute;
-    margin-top: -50px;
-    right: 0;
-  }
-
   .gearIcon {
 
     width: 50px;
@@ -70,7 +63,7 @@
   #info {
     position: absolute;
     margin-top: -50px;
-    right: clamp(30px, 20vw, 60px);
+    right: 0px;
     width: 50px;
     cursor: pointer;
     z-index: 101;
@@ -78,7 +71,7 @@
   }
   
   #info:hover {
-    rotate:360deg;
+    rotate:20deg;
     transform: scale(1.15);
   }
 
@@ -99,24 +92,6 @@
   #gameBox {
     margin-top: 50px;
     margin: auto;
-  }
-
-
-  #popup {
-    font-size: clamp(30px, 5vw, 35px);
-    outline: none;
-    justify-content: center;
-    width: clamp(300px, 80vw, 350px);
-    height: clamp(135px, 20vw, 150px);
-    border-radius: 25px;
-    margin-top: 70px;
-    border: solid rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    overflow: hidden;
-  }
-
-  #popup p {
-    margin-top: -10px;
   }
 
 
@@ -305,7 +280,7 @@
     }
   }
 
-  #custom_game, #daily_game, #stats, #popup {
+  #custom_game, #daily_game, #stats {
     transition: 0.3s;
     background: linear-gradient(28deg,rgba(121, 255, 255, 0.4) 0%, rgba(180, 255, 249, 0.4) 29%, rgba(255, 255, 255, 0.4) 100%);
     backdrop-filter: blur(5px);
@@ -350,7 +325,14 @@
   }
   #custom_game:hover, #daily_game:hover, #stats:hover {
     transition: 0.4s;
+  }
 
+  #popup {
+    transition: 0.3s;
+    background: linear-gradient(28deg,rgba(139, 139, 139, 0.803) 0%, rgba(176, 176, 176, 0.781) 40%, rgba(255, 255, 255, 0.759) 100%);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
   }
     
     .settings {
@@ -358,9 +340,6 @@
 
   .key, .cell {
     background: linear-gradient(28deg,rgba(139, 139, 139, 0.803) 0%, rgba(176, 176, 176, 0.781) 40%, rgba(255, 255, 255, 0.759) 100%);}
-
-  #popup {
-    background: linear-gradient(28deg,rgb(118, 166, 166) 0%, rgb(131, 208, 202) 29%, rgb(234, 234, 234) 100%);}
 
     .key:hover {
       transition: 0.2s;
@@ -388,6 +367,13 @@
         #grid, #agrid, #keyboard {
           margin: 15px auto;
           padding: 0 2px;
+        }
+      }
+
+      @media (max-width: 640px)
+      {
+        #custom  {
+          margin-right: 15px;
         }
       }
 

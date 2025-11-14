@@ -47,7 +47,7 @@ for (let i = 0; i < rows; i++) {
 
 
 const barholder = document.getElementById("barholder");
-const total = istats.on.reduce((a, b) => a + b, 0);
+const total = istats.wins;
 console.log(total)
 
 for (let i = 0; i < 6; i++) {
