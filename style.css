@@ -4,6 +4,9 @@
     margin-top: 15px;
   }
 
+  #mathle {
+    font-size: 40px;
+  }
 
   #background {
     animation: bcground 60s ease-in-out infinite;
@@ -46,24 +49,28 @@
     box-sizing: border-box;
   }
 
-  #gearIcon {
+
+  #setGear {
     position: absolute;
-    margin-top: -55px;
-    right: clamp(30px, 10vw, 100px);
+    margin-top: -50px;
+    right: 0;
+  }
+
+  .gearIcon {
+
     width: 50px;
     cursor: pointer;
-    z-index: 101;
     transition: transform 0.2s;
   }
   
-  #gearIcon:hover {
+  .gearIcon:hover {
     transform: rotate(90deg) scale(1.1);
   }
 
   #info {
     position: absolute;
-    margin-top: -55px;
-    right: clamp(90px, 20vw, 160px);
+    margin-top: -50px;
+    right: clamp(30px, 20vw, 60px);
     width: 50px;
     cursor: pointer;
     z-index: 101;
@@ -129,9 +136,9 @@
     display: inline-block;
     margin-top: 20px;
     border: 1px solid rgb(223, 223, 223);
-    width: clamp(100px, 40vw, 280px);
-    height: clamp(40px, 50vw, 80px);
-    font-size: clamp(16px, 5vw, 26px);
+    width: 280px;
+    height: 80px;
+    font-size: 26px;
     color: white;
     border-radius: 12px;
     cursor: pointer;
@@ -141,8 +148,8 @@
     display: inline-block;
     margin-top: 20px;
     border: 1px solid rgb(223, 223, 223);
-    width: clamp(200px, 40vw, 300px);
-    height: clamp(280px, 50vw, 400px);
+    width: 300px;
+    height: 400px;
     font-size: clamp(24px, 5vw, 35px);
     color: white;
     border-radius: 20px;
@@ -449,4 +456,53 @@
 
   button:hover {
     background: #005fd4;
+  }
+
+
+
+
+  #barholder {
+    margin-top: 200px;
+    margin: auto;
+    border-radius: 20px;
+    max-width: 500px;
+    transition: 0.3s;
+    background: linear-gradient(28deg,rgba(194, 194, 194, 0.5) 0%, rgba(230, 230, 230, 0.5) 29%, rgba(255, 255, 255, 0.6) 100%);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
+
+  .guess-row {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+  }
+  
+  .label {
+    margin-left: 20px;
+    font-size: 24px;
+  }
+  
+  .bar {
+    border: 2px solid white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 30px;
+    width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .fill {
+    height: 100%;
+    width: 0px;
+    background: #90d4d7;
+    border-radius: 12px;
+    transition: width 0.4s ease;
+  }
+
+  .number {
+    font-size: 24px;
   }

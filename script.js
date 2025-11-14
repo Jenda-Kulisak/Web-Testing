@@ -38,7 +38,6 @@ if (localStorage.getItem("settings") != null)
 else
     localStorage.setItem("settings", JSON.stringify(settings));
 
-console.log("settings: " + settings.allowedOperators)
 
 console.log(istats)
 
@@ -107,7 +106,6 @@ function Game() {
         dc.style.color = "red";
     }
 
-    console.log(vb);
     for (let i = 0; i < vb.length; i++) {
         vb[i].style.display = "none";
     }
@@ -668,7 +666,6 @@ function Game() {
         else {
             stringed = (`${numbers1}${signs[0]}${numbers2}`)
         }
-        console.log(stringed);
         stringed = stringed.replace("**", "^");
         stringed = stringed.replace("**", "^");
         stringed = `${stringed}=${word}`;
