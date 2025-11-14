@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mathle</title>
+  <link rel="icon" type="image/png" href="mathle-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta property="og:image" content="https://jenda-kulisak.github.io/Preview.png">
+</head>
+
+<body>
+  <img id="background" src="bcg.jpg">
+  <div style="position: relative; max-width: 800px; margin: auto;">
+    <h1 id="mathle" style="margin-top: -25px;">Mathle</h1>
+    <a href="settings.html">
+      <img src="gear-icon.png" id="gearIcon">
+    </a>
+  </div>
+  <h2 id="daily_completed"  style = "color: rgb(43, 167, 43); display: none"><u>Daily Challenge Completed!</u></h2>
+      <h2 id="game_text" style="margin-top: -10px;"></h2>
+
+  <div id="gameBox">
+    <button id="daily_game">Daily game</button>
+    <button id="custom_game">Custom game</button>
+  </div>
+  <button id="stats">Stats</button>
+  <div id="grid"></div>
+  <div id="agrid"></div>
+  <div id="keyboard"></div>
+  <dialog id="popup"></dialog>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
