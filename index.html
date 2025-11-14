@@ -14,6 +14,9 @@
   <img id="background" src="bcg.jpg">
   <div style="position: relative; max-width: 800px; margin: auto;">
     <h1 id="mathle" style="margin-top: -25px;">Mathle</h1>
+    <a href="info.html">
+    <img src="info.png" id="info">
+    </a>
     <a href="settings.html">
       <img src="gear-icon.png" id="gearIcon">
     </a>
@@ -22,8 +25,21 @@
       <h2 id="game_text" style="margin-top: -10px;"></h2>
 
   <div id="gameBox">
-    <button id="daily_game">Daily game</button>
-    <button id="custom_game">Custom game</button>
+    <div class="vyber">
+      <h1>🗓️</h1>
+      <h3> Daily Game</h3>
+      <p>Play to increase your streak</p>
+      <p>One equation per day</p>
+      <button id="daily_game">Play Daily game</button>
+    </div>
+    <div class="vyber" style="margin-left: 15px;">
+      <img src="gear-icon.png" style="width: 80px; margin-top: 30px; margin-bottom: -30px;">
+      <h3> Custom Game</h3>
+      <p>Customize your experience</p>
+      <p>Unlimited games</p>
+      <button id="custom_game">Play Custom game</button>
+    </div>
+    
   </div>
   <button id="stats">Stats</button>
   <div id="grid"></div>

@@ -7,7 +7,9 @@ const gt = document.getElementById("game_text");
 const dc = document.getElementById("daily_completed");
 const stats = document.getElementById("stats");
 const mt = document.getElementById("mathle");
-const agrid = document.getElementById("agrid")
+const agrid = document.getElementById("agrid");
+const vb = document.getElementsByClassName("vyber");
+
 let daily = true;
 
 const istatscreate = {
@@ -105,6 +107,10 @@ function Game() {
         dc.style.color = "red";
     }
 
+    console.log(vb);
+    for (let i = 0; i < vb.length; i++) {
+        vb[i].style.display = "none";
+    }
 
 
     grid.style.gridTemplateColumns = `repeat(${cols}, clamp(35px, 10vw, 60px))`;
@@ -425,7 +431,10 @@ function Game() {
         console.log(istats);
         istats.completed++;
         if (win) {
-            istats.on[attempt - 1]++;
+            if (attempt < 6)
+                istats.on[attempt - 1]++;
+            else if (attempt >= 6)
+                istats.on[5]++;
         }
         if (daily) {
             document.cookie = win + " " + new Date().toLocaleDateString();

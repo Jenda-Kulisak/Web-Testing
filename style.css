@@ -6,7 +6,7 @@
 
 
   #background {
-    animation: bcground 30s ease-in-out infinite;
+    animation: bcground 60s ease-in-out infinite;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -50,7 +50,7 @@
     position: absolute;
     margin-top: -55px;
     right: clamp(30px, 10vw, 100px);
-    max-width: 50px;
+    width: 50px;
     cursor: pointer;
     z-index: 101;
     transition: transform 0.2s;
@@ -58,6 +58,21 @@
   
   #gearIcon:hover {
     transform: rotate(90deg) scale(1.1);
+  }
+
+  #info {
+    position: absolute;
+    margin-top: -55px;
+    right: clamp(90px, 20vw, 160px);
+    width: 50px;
+    cursor: pointer;
+    z-index: 101;
+    transition: 0.2s;
+  }
+  
+  #info:hover {
+    rotate:360deg;
+    transform: scale(1.15);
   }
 
 
@@ -97,47 +112,43 @@
     margin-top: -10px;
   }
 
-  #custom_game {
-    margin: 5px;
-    margin-top: 10px;
-    border: 1px solid rgb(223, 223, 223);
-    width: clamp(200px, 40vw, 300px);
-    height: clamp(280px, 50vw, 400px);
-    font-size: clamp(24px, 5vw, 35px);
-    color: white;
-    justify-content: center;
-    border-radius: 20px;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
-  }
+
 
   #custom_game:hover, #daily_game:hover {
     transform: scale(1.025);
     border: 3px solid white;
   }
   #custom_game:hover {
-    rotate: 2deg;
+    rotate: -1deg;
   }
   #daily_game:hover {
-    rotate: -2deg;
+    rotate: 1deg;
   }
 
-  #daily_game {
+  #daily_game, #custom_game {
     display: inline-block;
+    margin-top: 20px;
     border: 1px solid rgb(223, 223, 223);
-    margin-top: 0px;
+    width: clamp(100px, 40vw, 280px);
+    height: clamp(40px, 50vw, 80px);
+    font-size: clamp(16px, 5vw, 26px);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  .vyber {
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid rgb(223, 223, 223);
     width: clamp(200px, 40vw, 300px);
     height: clamp(280px, 50vw, 400px);
     font-size: clamp(24px, 5vw, 35px);
     color: white;
-    justify-content: center;
     border-radius: 20px;
     cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
   }
+
 
   #stats {
     margin: auto;
@@ -254,7 +265,7 @@
     pointer-events: none;
     opacity: 1;
     border: 2px solid white;
-    animation: winamination 1.5s infinite;
+    animation: winanimation 1.5s infinite;
   }
 
   @keyframes bcground {
@@ -266,7 +277,7 @@
     }
   }
 
-  @keyframes winamination {
+  @keyframes winanimation {
     0%, 100% {
       transform: rotate(5deg) scale(1.025);
     }
@@ -288,17 +299,57 @@
   }
 
   #custom_game, #daily_game, #stats, #popup {
-    transition: 0.4s;
-    background: linear-gradient(28deg,rgb(142, 202, 202) 0%, rgba(165, 255, 247, 0.664) 29%, rgba(255, 255, 255, 0.82) 100%);}
+    transition: 0.3s;
+    background: linear-gradient(28deg,rgba(121, 255, 255, 0.4) 0%, rgba(180, 255, 249, 0.4) 29%, rgba(255, 255, 255, 0.4) 100%);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
+  th, td {
+    transition: 0.3s;
+    background: linear-gradient(28deg,rgba(194, 194, 194, 0.5) 0%, rgba(230, 230, 230, 0.5) 29%, rgba(255, 255, 255, 0.6) 100%);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
 
+
+
+  .vyber {
+    transition: 0.3s;
+    background: linear-gradient(28deg,rgba(174, 248, 255, 0.4) 0%, rgba(192, 248, 255, 0.4) 29%, rgba(255, 255, 255, 0.4) 100%);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
+
+  .vyber p {
+    line-height: 10px;
+    font-size: 20px;
+  }
+
+  .vyber h1
+  {
+    margin-top: 20px;
+    margin-bottom: -20px;
+  }
+
+  #custom_game:hover, #daily_game:hover, #stats:hover, .vyber:hover {
+    transform: scale(1.03);
+    background: linear-gradient(28deg,rgba(96, 255, 255, 0.5) 0%, rgba(152, 255, 246, 0.5) 29%, rgba(255, 255, 255, 0.5) 100%);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.7);
+
+  }
   #custom_game:hover, #daily_game:hover, #stats:hover {
     transition: 0.4s;
-    background: linear-gradient(28deg,rgba(130, 229, 229, 0.66) 0%, rgba(113, 215, 207, 0.825) 29%, rgb(255, 255, 255) 100%);}
 
-  .cell, th, td {
-    background: linear-gradient(28deg,rgb(139, 139, 139) 0%, rgb(176, 176, 176) 40%, rgba(255, 255, 255, 0.811) 100%);}
+  }
+    
+    .settings {
+    background: linear-gradient(28deg,rgba(174, 174, 174, 0.9) 0%, rgba(200, 200, 200, 0.9) 40%, rgba(255, 255, 255, 0.95) 100%);}
 
-  .key {
+  .key, .cell {
     background: linear-gradient(28deg,rgba(139, 139, 139, 0.803) 0%, rgba(176, 176, 176, 0.781) 40%, rgba(255, 255, 255, 0.759) 100%);}
 
   #popup {
@@ -320,6 +371,12 @@
           right: 10px;
           float:right;
         }
+
+        #info {
+          right: 60px;
+          width: 40px;
+          float: right;
+        }
         
         #grid, #agrid, #keyboard {
           margin: 15px auto;
@@ -337,7 +394,6 @@
   .settings {
     margin: auto;
     margin-top: 10px;
-    background: rgba(255, 255, 255, 0.8);
     color: black;
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);

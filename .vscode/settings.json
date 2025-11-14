@@ -1,0 +1,27 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "license.md": true,
+    ".gitattributes": true,
+    "bar.png": true,
+    "Preview.png": true,
+    "mathle-logo.png": true,
+    "gear-icon.png": true,
+    "bcg.jpg": true,
+    "info.png": true
+  },
+  "hide-files.files": [
+    "license.md",
+    ".gitattributes",
+    "bar.png",
+    "Preview.png",
+    "mathle-logo.png",
+    "gear-icon.png",
+    "bcg.jpg",
+    "info.png"
+  ]
+}
