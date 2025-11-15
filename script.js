@@ -182,11 +182,14 @@ function Game() {
             if (e.key === "Backspace") {
                 let it = e.target.innerText;
                 e.target.innerText = "";
-                if (i % cols != 0 && it == "")
+                if (i % cols != 0 && it == "") {
                     cll[i - 1].focus()
+                    activecell = i - 1;
+                }
             }
             else if (((i + 1) % cols != 0 || i == 1)) {
                 cll[i + 1].focus()
+                activecell = i + 1;
             }
             return;
         })
@@ -304,6 +307,8 @@ function Game() {
             for (let i = unlockedCells - cols; i < unlockedCells; i++) {
                 userInput = userInput + cells[i].innerText;
             }
+            userInput = userInput.replace("^", "**");
+            userInput = userInput.replace("^", "**");
             const [s1, s2] = userInput.split("=");
             if (eval(s1) == Number(s2)) {
 
@@ -721,11 +726,10 @@ function CheckStats() {
         istats.streak = 0;
     if (istats.streakDate == null)
         istats.streakDate = 0;
-    let streakDate = new Date(istats.streakDate);
-    let tomorrowOfStreak = new Date(streakDate);
-    tomorrowOfStreak.setDate(streakDate.getDate() + 1);
+    let tomorrowOfStreak = new Date();
+    tomorrowOfStreak.setDate(tomorrowOfStreak.getDate() - 1);
     let tomorrowDateString = tomorrowOfStreak.toLocaleDateString();
-    if (istats.streakDate != new Date().toLocaleDateString() && new Date().toLocaleDateString() != tomorrowDateString) {
+    if (istats.streakDate != new Date().toLocaleDateString() && tomorrowDateString != istats.streakDate) {
         istats.streak = 0;
         localStorage.setItem("istats", JSON.stringify(istats));
     }

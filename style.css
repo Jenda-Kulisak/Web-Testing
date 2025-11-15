@@ -137,9 +137,9 @@
     border: 1px solid rgb(223, 223, 223);
     position: flex;
     margin-top: 20px;
-    width: clamp(400px, 80vw, 610px);
-    height: clamp(70px, 12vw, 100px);
-    font-size: clamp(28px, 5vw, 40px);
+    width: clamp(350px, 60vw, 500px);
+    height: clamp(70px, 12vw, 90px);
+    font-size: clamp(32px, 5vw, 40px);
     color: white;
     justify-content: center;
     background-color: #121212;
@@ -297,12 +297,19 @@
 
 
 
-  .vyber {
+  .vyber, .settings, input {
     transition: 0.3s;
     background: linear-gradient(28deg,rgba(174, 248, 255, 0.4) 0%, rgba(192, 248, 255, 0.4) 29%, rgba(255, 255, 255, 0.4) 100%);
     backdrop-filter: blur(5px);
     border: 2px solid rgba(255, 255, 255, 0.7);
     box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+  }
+
+  input:hover, #save:hover {
+    transition: 0.05s;
+    transform: scale(1.0);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
   }
 
   .vyber p {
@@ -317,15 +324,14 @@
   }
 
   #custom_game:hover, #daily_game:hover, #stats:hover, .vyber:hover {
+    transition: 0.4s;
     transform: scale(1.03);
     background: linear-gradient(28deg,rgba(96, 255, 255, 0.5) 0%, rgba(152, 255, 246, 0.5) 29%, rgba(255, 255, 255, 0.5) 100%);
     border: 3px solid rgba(255, 255, 255, 0.8);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.7);
 
   }
-  #custom_game:hover, #daily_game:hover, #stats:hover {
-    transition: 0.4s;
-  }
+
 
   #popup {
     transition: 0.3s;
@@ -334,9 +340,7 @@
     border: 2px solid rgba(255, 255, 255, 0.7);
     box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
   }
-    
-    .settings {
-    background: linear-gradient(28deg,rgba(174, 174, 174, 0.9) 0%, rgba(200, 200, 200, 0.9) 40%, rgba(255, 255, 255, 0.95) 100%);}
+  
 
   .key, .cell {
     background: linear-gradient(28deg,rgba(139, 139, 139, 0.803) 0%, rgba(176, 176, 176, 0.781) 40%, rgba(255, 255, 255, 0.759) 100%);}
@@ -352,15 +356,8 @@
           padding: 10px 5px;
         }
 
-        #gearIcon {
-          width: 40px;
-          right: 10px;
-          float:right;
-        }
 
         #info {
-          right: 60px;
-          width: 40px;
           float: right;
         }
         
@@ -415,6 +412,11 @@
     font-size: 1rem;
   }
 
+  input {
+    border-radius: 5px;
+    outline: none;
+  }
+
   .operators {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -433,15 +435,13 @@
     padding: 0.6rem;
     border: none;
     border-radius: 0.5rem;
+    border: 1px solid white;
     background: #0077ff;
     color: white;
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
-  }
-
-  button:hover {
-    background: #005fd4;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
   }
 
 
@@ -450,8 +450,8 @@
   #barholder {
     margin-top: 200px;
     margin: auto;
-    border-radius: 20px;
-    max-width: 500px;
+    border-radius: 12px;
+    max-width: 350px;
     transition: 0.3s;
     background: linear-gradient(28deg,rgba(194, 194, 194, 0.5) 0%, rgba(230, 230, 230, 0.5) 29%, rgba(255, 255, 255, 0.6) 100%);
     backdrop-filter: blur(5px);
@@ -485,10 +485,11 @@
     height: 100%;
     width: 0px;
     background: #90d4d7;
-    border-radius: 12px;
+    border-radius: 8px;
     transition: width 0.4s ease;
   }
 
   .number {
     font-size: 24px;
+    margin-right: 10px;
   }

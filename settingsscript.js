@@ -21,12 +21,24 @@ if (settings.allowedOperators) {
 sb.addEventListener("click", () => {
     console.log("update settings");
 
-    const rowsValue = parseInt(document.getElementById("rows").value);
-    const colsValue = parseInt(document.getElementById("cols").value);
+    let rowsValue = parseInt(rows.value);
+    let colsValue = parseInt(cols.value);
+    if (rowsValue > 20)
+        rowsValue = 20;
+    else if (rowsValue < 1)
+        rowsValue = 1;
 
-    const operators = Array.from(
+    if (colsValue > 12)
+        colsValue = 12;
+    else if (colsValue < 5)
+        colsValue = 5;
+
+    let operators = Array.from(
         document.querySelectorAll('.operators input[type="checkbox"]:checked')
     ).map(op => op.value);
+
+    if (operators.length == 0)
+        operators = ["+", "-", "*", "/"]
 
     const settings = {
         rows: rowsValue,
@@ -38,3 +50,4 @@ sb.addEventListener("click", () => {
 
     window.location.href = "index.html";
 });
+
