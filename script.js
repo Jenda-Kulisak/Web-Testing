@@ -8,7 +8,6 @@ const stats = document.getElementById("stats");
 const mt = document.getElementById("mathle");
 const agrid = document.getElementById("agrid");
 const vb = document.getElementsByClassName("vyber");
-
 let daily = true;
 
 const istatscreate = {
@@ -56,9 +55,9 @@ console.log(daily_play.date + " - " + new Date().toLocaleDateString());
 
 if (daily_play.date == new Date().toLocaleDateString()) {
     dc.style.display = "block";
-    document.getElementById("daily").style.opacity = 0.7;
-    document.getElementById("daily").style.pointerEvents = "none";
+    dg.style.opacity = 0.7;
     dg.style.pointerEvents = 'none';
+    document.getElementById("calendar").pointerEvents = "mousedown";
     console.log(daily_play.status)
     if (daily_play.status == false) {
         dc.style.color = "red";
