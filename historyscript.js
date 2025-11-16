@@ -1,5 +1,6 @@
 const table = document.getElementById("history");
 const sm = document.getElementById("show_more");
+const todayGame = JSON.parse(localStorage.getItem("daily_play"))
 const targetDate = new Date("2025-09-17");
 
 let today = new Date();
@@ -10,6 +11,11 @@ console.log("Day no. ", diffDays);
 
 let currentLength = 1;
 let length = 21;
+console.log(todayGame.date + " " + today.toLocaleDateString())
+if (todayGame.date == today.toLocaleDateString()) {
+    currentLength = 0;
+    length = 20;
+}
 addToTable();
 currentLength = length;
 
