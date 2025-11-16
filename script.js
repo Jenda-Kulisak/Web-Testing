@@ -37,24 +37,28 @@ if (localStorage.getItem("settings") != null)
 else
     localStorage.setItem("settings", JSON.stringify(settings));
 
-
 console.log(istats)
+
+let daily_play = {
+    date: 0,
+    status: ""
+}
+
+if (localStorage.getItem("daily_play") != null)
+    daily_play = JSON.parse(localStorage.getItem("daily_play"));
 
 kb.style.display = "none";
 grid.style.display = "none";
-let cookies = document.cookie;
-let cookiesindividual = cookies.split(" ", 1)
-let todaydate = cookies.split(cookiesindividual[0] + " ")[1]
 
-console.log(todaydate + " - " + new Date().toLocaleDateString());
+console.log(daily_play.date + " - " + new Date().toLocaleDateString());
 
 
-if (todaydate == new Date().toLocaleDateString()) {
+if (daily_play.date == new Date().toLocaleDateString()) {
     dc.style.display = "block";
     document.getElementById("daily").style.opacity = 0.7;
     document.getElementById("daily").style.pointerEvents = "none";
     dg.style.pointerEvents = 'none';
-    if (cookiesindividual[0] == "false") {
+    if (daily_play.status == "false") {
         dc.innerText = "Daily Challenge Failed";
         dc.style.textDecoration = "underline";
     }
@@ -102,7 +106,7 @@ function Game() {
 
 
 
-    if (cookiesindividual[0] == "false") {
+    if (daily_play.status == "false") {
         dc.style.color = "red";
     }
 
@@ -443,7 +447,9 @@ function Game() {
                 istats.on[5]++;
         }
         if (daily) {
-            document.cookie = win + " " + new Date().toLocaleDateString();
+            daily_play.date = new Date().toLocaleDateString();
+            daily_play.status = win;
+            localStorage.setItem("daily_play", JSON.stringify(daily_play));
             console.log(document.cookie)
         }
         if (win && daily) {
