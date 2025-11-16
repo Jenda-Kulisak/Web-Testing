@@ -307,8 +307,8 @@ function Game() {
             for (let i = unlockedCells - cols; i < unlockedCells; i++) {
                 userInput = userInput + cells[i].innerText;
             }
-            userInput = userInput.replace("^", "**");
-            userInput = userInput.replace("^", "**");
+            userInput = userInput.replaceAll("^", "**");
+            console.log(userInput);
             const [s1, s2] = userInput.split("=");
             if (eval(s1) == Number(s2)) {
 
@@ -624,7 +624,7 @@ function Game() {
                 parseInt(digits);
                 parseInt(result);
 
-                if (signs[0] == "**" && numbers2 > 4 || signs[1] == "**" && numbers3 > 4) {
+                if (signs[0] == "**" && numbers2 > 4 || signs[1] == "**" && numbers3 > 4 || result > 10000) {
                     sucess = false;
                     break;
                 }
@@ -662,7 +662,7 @@ function Game() {
                 console.log("Finding valid number took (attempts): " + efficiency)
                 break;
             }
-            if (efficiency >= 100000) {
+            if (efficiency >= 20000) {
                 alert("could not find a suitable excercise, please change the parameters in your settings")
                 window.location.href = "settings.html";
                 break;
@@ -674,8 +674,7 @@ function Game() {
         else {
             stringed = (`${numbers1}${signs[0]}${numbers2}`)
         }
-        stringed = stringed.replace("**", "^");
-        stringed = stringed.replace("**", "^");
+        stringed = stringed.replaceAll("**", "^");
         stringed = `${stringed}=${word}`;
         signs.push(stringed)
 

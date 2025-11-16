@@ -11,7 +11,6 @@ console.log("Day no. ", diffDays);
 
 let currentLength = 1;
 let length = 21;
-console.log(todayGame.date + " " + today.toLocaleDateString())
 if (todayGame.date == today.toLocaleDateString()) {
     currentLength = 0;
     length = 20;
