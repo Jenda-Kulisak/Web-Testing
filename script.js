@@ -18,7 +18,8 @@ const istatscreate = {
     on: [0, 0, 0, 0, 0, 0],
     dailyCompleted: 0,
     streak: 0,
-    streakDate: 0
+    streakDate: 0,
+    maxStreak: 0
 };
 
 let istats = new Object(istatscreate);
@@ -58,7 +59,9 @@ if (daily_play.date == new Date().toLocaleDateString()) {
     document.getElementById("daily").style.opacity = 0.7;
     document.getElementById("daily").style.pointerEvents = "none";
     dg.style.pointerEvents = 'none';
-    if (daily_play.status == "false") {
+    console.log(daily_play.status)
+    if (daily_play.status == false) {
+        dc.style.color = "red";
         dc.innerText = "Daily Challenge Failed";
         dc.style.textDecoration = "underline";
     }
@@ -103,12 +106,6 @@ function Game() {
     let activecell = 0;
     let stringed = "";
     let answer;
-
-
-
-    if (daily_play.status == "false") {
-        dc.style.color = "red";
-    }
 
     for (let i = 0; i < vb.length; i++) {
         vb[i].style.display = "none";
@@ -455,6 +452,8 @@ function Game() {
         if (win && daily) {
             istats.streakDate = new Date().toLocaleDateString();
             istats.streak++;
+            if (istats.streak > istats.maxStreak)
+                istats.maxStreak = istats.streak;
             istats.dailyCompleted++;
         }
 
@@ -465,6 +464,7 @@ function Game() {
         }
         else {
             console.log("LOST")
+            istats.streak = 0;
             istats.losses++;
             agrid.style.display = "grid";
             kb.style.display = "none"
@@ -732,6 +732,9 @@ function CheckStats() {
         istats.streak = 0;
     if (istats.streakDate == null)
         istats.streakDate = 0;
+    if (istats.maxStreak == null)
+        istats.maxStreak = 0;
+
     let tomorrowOfStreak = new Date();
     tomorrowOfStreak.setDate(tomorrowOfStreak.getDate() - 1);
     let tomorrowDateString = tomorrowOfStreak.toLocaleDateString();

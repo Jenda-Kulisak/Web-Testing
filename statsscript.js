@@ -1,7 +1,7 @@
 const table = document.getElementById("statarray")
-const rows = 5;
+const rows = 6;
 const cols = 2;
-const nazvy = ["Streak", "Completed", "Total Wins", "Daily Wins", "Losses", "1. Try", "2. Try", "3. Try", "4. Try", "5. Try", "6. Try"];
+const nazvy = ["Longest Streak", "Streak", "Completed", "Total Wins", "Daily Wins", "Losses", "1. Try", "2. Try", "3. Try", "4. Try", "5. Try", "6. Try"];
 
 const istatscreate = {
     completed: 0,
@@ -10,14 +10,26 @@ const istatscreate = {
     on: [0, 0, 0, 0, 0, 0],
     dailyCompleted: 0,
     streak: 0,
-    streakDate: 0
+    streakDate: 0,
+    maxStreak: 0
 };
 
 let istats = Object.create(istatscreate);
 if (localStorage.getItem("istats") != null)
     istats = JSON.parse(localStorage.getItem("istats"));
+
+for (let i = 0; i < 6; i++) {
+    if (istats.on[i] == undefined || istats.on[i] == null)
+        istats.on[i] = 0;
+}
 if (istats.dailyCompleted == null)
     istats.dailyCompleted = 0;
+if (istats.streak == null)
+    istats.streak = 0;
+if (istats.streakDate == null)
+    istats.streakDate = 0;
+if (istats.maxStreak == null)
+    istats.maxStreak = 0;
 
 const headerrow = document.createElement("tr");
 const header = document.createElement("th");
@@ -27,7 +39,7 @@ header.style.fontSize = "35px";
 headerrow.appendChild(header);
 table.appendChild(headerrow);
 const barvalues = [istats.on[0], istats.on[1], istats.on[2], istats.on[3], istats.on[4], istats.on[5]]
-const values = [istats.streak, istats.completed, istats.wins, istats.dailyCompleted, istats.losses]
+const values = [istats.maxStreak, istats.streak, istats.completed, istats.wins, istats.dailyCompleted, istats.losses]
 for (let i = 0; i < rows; i++) {
     const row = document.createElement("tr");
     const child1 = document.createElement("td");
@@ -36,7 +48,7 @@ for (let i = 0; i < rows; i++) {
 
     child1.innerText = nazvy[i];
     child2.innerText = values[i];
-    if (i == 0) {
+    if (i == 1) {
         child2.style.fontWeight = "bold";
     }
 
