@@ -31,6 +31,10 @@ if (istats.streakDate == null)
 if (istats.maxStreak == null)
     istats.maxStreak = 0;
 
+
+if (istats.maxStreak < istats.streak)
+    istats.maxStreak = istats.streak;
+
 const headerrow = document.createElement("tr");
 const header = document.createElement("th");
 header.innerText = "Stats";
