@@ -14,17 +14,12 @@
     
     <p><strong>Mathle</strong> is a puzzle game inspired by Wordle. Your goal is to guess a valid equation by filling in numbers and operators!</p>
 
-    <div class="rule">
-      <p>Both sides of the equation <strong>MUST</strong> be equal!</p>
-      <p>For example: <br><strong>3+5=8 is valid <br>3+5=9 is not</strong></p>
-    </div>
-
     <h2>How To Play</h2>
     <p>You have <strong>6 attempts</strong> to guess the equation. Each guess must be a valid mathematical equation where:</p>
     <div class="rule">
     <ul>
-      <li>The left side equals the right side</li>
-      <li>All cells are filled</li>
+        <li>Both sides of the equation <strong>MUST</strong> be equal!</li>
+        <li>All cells are filled</li>
       <li>The order of operations <strong>is followed</strong></li>
 
     </ul>
@@ -47,13 +42,54 @@
       </div>
     </div>
 
+
+    <h2>Game Modes</h2>
+    <p><strong>Daily Game:</strong> Play the same puzzle as everyone else! </p>
+    <div class="rule">
+        <ul>
+            <li>Complete it once per day and build your streak.</li>
+            <li>Custom settings do not apply!</li>
+        </ul>
+    </div>
+    
+    <p><strong>Custom Game:</strong> Create your own puzzle with customizable settings:</p>
+    <div class="rule">
+        <ul>
+            <li>Choose grid size</li>
+            <li>Select operators to use (+, -, *, ÷, ^)</li>
+            <li>Play unlimited games with your preferred difficulty</li>
+          </ul>
+    </div>
+
+    <h2>Stat Tracking</h2>
+    <p>Your performance is automatically saved:</p>
+    <div class="rule">
+    <ul>
+      <li>Games played</li>
+      <li>Wins and losses</li>
+      <li>Distribution of wins by attempt number</li>
+      <li>Daily challenge completion rate</li>
+      <li>Longest and current streak</li>
+    </ul>
+    </div>
+    <h2>Additional Rules</h2>
+    <div class="tip-box">
+        <ul>
+            <li>Operators are always on the left side of the equation</li>
+            <li>The answer <strong>can</strong> be negative</li>
+            <li>PEMDAS applies</li>
+            <li>0 <strong>can't</strong> appear on its own or before larger numbers (07 + 0 = 7)</li>
+            <li>Multiple same numbers being purple does <strong>NOT</strong> indicate the given number appears multiple times</li>
+        </ul>
+    </div>
+
     <h2>Example Gameplay</h2>
     
     <div class="example-wrapper">
       <p><strong>Target equation:</strong> 12+34=46</p>
       <p><strong>Your first guess:</strong> 15+31=46</p>
       <div class="example-grid">
-        <div class="example-cell gray">1</div>
+        <div class="example-cell purple">1</div>
         <div class="example-cell gray">5</div>
         <div class="example-cell green">+</div>
         <div class="example-cell purple">3</div>
@@ -73,6 +109,7 @@
       </div>
     </div>
 
+    
     <div class="example-wrapper">
       <p><strong>Your second guess:</strong> 12+34=46</p>
       <div class="example-grid">
@@ -86,38 +123,6 @@
         <div class="example-cell green win">6</div>
       </div>
     </div>
-
-    <h2>Game Modes</h2>
-    <p><strong>Daily Challenge:</strong> Play the same puzzle as everyone else! <br>Complete it once per day and build your streak.<br>Custom settings do not apply!</p>
-    
-    <p><strong>Custom Game:</strong> Create your own puzzle with customizable settings:</p>
-    <div class="rule">
-        <ul>
-            <li>Choose grid size</li>
-            <li>Select operators to use (+, -, *, ÷, ^)</li>
-            <li>Play unlimited games with your preferred difficulty</li>
-          </ul>
-    </div>
-
-    <h2>Stat Tracking</h2>
-    <p>Your performance is automatically saved:</p>
-    <ul>
-      <li>Games played</li>
-      <li>Wins and losses</li>
-      <li>Distribution of wins by attempt number</li>
-      <li>Daily challenge completion rate</li>
-      <li>Current streak</li>
-    </ul>
-    <h2>Additional Rules</h2>
-    <div class="tip-box">
-        <ul>
-            <li>Operators are always on the left side of the equation</li>
-            <li>The answer <strong>can</strong> be negative</li>
-            <li>PEMDAS applies</li>
-            <li>0 <strong>can't</strong> appear on its own or before larger numbers (07 + 0 = 7)</li>
-        </ul>
-    </div>
-
 
     <div class="button-container">
       <a href="index.html" class="back-button">Back to Game</a>

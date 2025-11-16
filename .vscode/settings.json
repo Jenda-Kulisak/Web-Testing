@@ -12,7 +12,8 @@
     "mathle-logo.png": true,
     "gear-icon.png": true,
     "bcg.jpg": true,
-    "info.png": true
+    "info.png": true,
+    "calendar.svg": true
   },
   "hide-files.files": [
     "license.md",
@@ -22,6 +23,7 @@
     "mathle-logo.png",
     "gear-icon.png",
     "bcg.jpg",
-    "info.png"
+    "info.png",
+    "calendar.svg"
   ]
 }

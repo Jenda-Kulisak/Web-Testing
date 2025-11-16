@@ -96,18 +96,26 @@
 
 
 
-  #custom_game:hover, #daily_game:hover {
+#bar {
+  height: 80px;
+  margin-top: 5px;
+  float:left;
+  margin-left: 20px;
+
+}
+
+  #custom_game:hover, #daily_game:hover, #statbutton {
     transform: scale(1.025);
     border: 3px solid white;
   }
-  #custom_game:hover {
+  #custom_game:hover, #statbutton:hover {
     rotate: -1deg;
   }
   #daily_game:hover {
     rotate: 1deg;
   }
 
-  #daily_game, #custom_game {
+  #daily_game, #custom_game, #statbutton {
     display: inline-block;
     margin-top: 20px;
     border: 1px solid rgb(223, 223, 223);
@@ -119,6 +127,13 @@
     cursor: pointer;
   }
 
+  #statbutton {
+    float:right;
+    margin-right: 20px;
+    margin-top: 10px;
+    height: 65px;
+  }
+
   .vyber {
     display: inline-block;
     margin-top: 20px;
@@ -128,7 +143,6 @@
     font-size: clamp(24px, 5vw, 35px);
     color: white;
     border-radius: 20px;
-    cursor: pointer;
   }
 
 
@@ -137,9 +151,9 @@
     border: 1px solid rgb(223, 223, 223);
     position: flex;
     margin-top: 20px;
-    width: clamp(350px, 60vw, 500px);
-    height: clamp(70px, 12vw, 90px);
-    font-size: clamp(32px, 5vw, 40px);
+    width: 420px;
+    height: 90px;
+    font-size: 40px;
     color: white;
     justify-content: center;
     background-color: #121212;
@@ -154,7 +168,7 @@
     border: 3px solid white;
   }
 
-  #custom_game, #daily_game, #stats {
+  #custom_game, #daily_game, #statbutton {
     font-style: italic;
   } 
 
@@ -280,7 +294,7 @@
     }
   }
 
-  #custom_game, #daily_game, #stats {
+  #custom_game, #daily_game, #statbutton {
     transition: 0.3s;
     background: linear-gradient(28deg,rgba(121, 255, 255, 0.4) 0%, rgba(180, 255, 249, 0.4) 29%, rgba(255, 255, 255, 0.4) 100%);
     backdrop-filter: blur(5px);
@@ -297,7 +311,7 @@
 
 
 
-  .vyber, .settings, input {
+  .vyber, .settings, input, #stats {
     transition: 0.3s;
     background: linear-gradient(28deg,rgba(174, 248, 255, 0.4) 0%, rgba(192, 248, 255, 0.4) 29%, rgba(255, 255, 255, 0.4) 100%);
     backdrop-filter: blur(5px);
@@ -323,7 +337,7 @@
     margin-bottom: -20px;
   }
 
-  #custom_game:hover, #daily_game:hover, #stats:hover, .vyber:hover {
+  #custom_game:hover, #daily_game:hover, #statbutton:hover, #stats:hover, .vyber:hover {
     transition: 0.4s;
     transform: scale(1.03);
     background: linear-gradient(28deg,rgba(96, 255, 255, 0.5) 0%, rgba(152, 255, 246, 0.5) 29%, rgba(255, 255, 255, 0.5) 100%);
@@ -351,13 +365,28 @@
       background: linear-gradient(28deg,rgb(139, 139, 139) 0%, rgb(176, 176, 176) 40%, rgb(255, 255, 255) 100%);}
 
 
-      @media (max-width: 424px) {
+      @media (max-width: 430px) {
         body {
           padding: 10px 5px;
         }
 
+        #stats {
+          width: 300px;
+          height: 70px;
+        }
+        #statbutton {
+          margin-top: 7.5px;
+          height: 50px;
+          width: 160px;
+          font-size: 22px;
+
+        }
+        #bar {
+          height: 60px;
+        }
 
         #info {
+          width: 40px;
           float: right;
         }
         
